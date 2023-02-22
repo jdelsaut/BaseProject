@@ -1,8 +1,8 @@
-﻿using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Settings;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using System.Threading.Tasks;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     /// <summary>
     /// Provides a new binding instance for the function host.

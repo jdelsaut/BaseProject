@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace BoxApi.Common.StringEnum
+namespace BaseProject.Common.StringEnum
 {
     public sealed class StringEnum
     {

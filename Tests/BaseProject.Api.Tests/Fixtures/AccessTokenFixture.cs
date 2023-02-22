@@ -1,6 +1,6 @@
-﻿using BoxApi.Api.AccessToken;
-using BoxApi.Infrastructure.Claims;
-using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Api.AccessToken;
+using BaseProject.Infrastructure.Claims;
+using BaseProject.Infrastructure.Settings;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
-namespace BoxApi.Api.Tests.Fixtures
+namespace BaseProject.Api.Tests.Fixtures
 {
     public class AccessTokenFixture : IDisposable
     {

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Common\BoxApi.Common\BoxApi.Common.csproj" />
+    <ProjectReference Include="..\..\Src\Common\BaseProject.Common\BaseProject.Common.csproj" />
   </ItemGroup>
 
 </Project>

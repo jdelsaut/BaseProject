@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using System;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     public static class AccessTokenExtensions
     {

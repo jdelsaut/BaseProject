@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace BoxApi.Common.Tests
+namespace BaseProject.Common.Tests
 {
     public class StringEnumTests
     {

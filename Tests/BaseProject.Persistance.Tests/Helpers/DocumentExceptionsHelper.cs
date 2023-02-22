@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 
-namespace BoxApi.Persistance.Tests.Helpers
+namespace BaseProject.Persistance.Tests.Helpers
 {
     public static class DocumentExceptionsHelper
     {

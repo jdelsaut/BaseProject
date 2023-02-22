@@ -72,7 +72,7 @@
         "type": "SystemAssigned"
       },
       "tags": {
-        "Microservice": "BoxApi",
+        "Microservice": "BaseProject",
         "Environment": "[parameters('ARM_envName')]",
         "Version": "[parameters('ARM_version')]"
       }
@@ -86,7 +86,7 @@
         "accountType": "Standard_LRS"
       },
       "tags": {
-        "Microservice": "BoxApi",
+        "Microservice": "BaseProject",
         "Environment": "[parameters('ARM_envName')]",
         "Version": "[parameters('ARM_version')]"
       }
@@ -125,7 +125,7 @@
       },
       "tags": {
         "defaultExperience": "Core (SQL)",
-        "Microservice": "BoxApi",
+        "Microservice": "BaseProject",
         "Environment": "[parameters('ARM_envName')]",
         "Version": "[parameters('ARM_version')]"
       }

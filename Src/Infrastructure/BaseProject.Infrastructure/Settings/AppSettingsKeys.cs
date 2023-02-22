@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Infrastructure.Settings
+﻿namespace BaseProject.Infrastructure.Settings
 {
     public static class AppSettingsKeys
     {
@@ -9,12 +9,12 @@
         public const string VersionDescription = "VersionDescription";
         public const string AuthHeaderName = "AUTH_HEADER_NAME";
         public const string BearerPrefix = "BEARER_PREFIX";
-        public const string BoxApiEndpoint = "BoxApi_ENDPOINT";
+        public const string BaseProjectEndpoint = "BaseProject_ENDPOINT";
 
         //CosmosDB & Service bus settings keys
-        public const string BoxApiCosmosDbEndpoint = "BoxApiCosmosDbEndpoint";
-        public const string BoxApiCosmosDbPrimaryKey = "BoxApiCosmosDbPrimaryKey";
-        public const string BoxApiResponseListenerConnection = "BoxApiResponseListenerConnection";
+        public const string BaseProjectCosmosDbEndpoint = "BaseProjectCosmosDbEndpoint";
+        public const string BaseProjectCosmosDbPrimaryKey = "BaseProjectCosmosDbPrimaryKey";
+        public const string BaseProjectResponseListenerConnection = "BaseProjectResponseListenerConnection";
 
         //Authentication & Authorization related settings keys
         public const string RequireSignedJwt = "REQUIRE_SIGNED_JWT";

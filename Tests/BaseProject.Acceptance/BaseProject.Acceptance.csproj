@@ -41,8 +41,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Presentation\BoxApi.Api\BoxApi.Api.csproj" />
-    <ProjectReference Include="..\BoxApi.CommonForTests\BoxApi.CommonForTests.csproj" />
+    <ProjectReference Include="..\..\Src\Presentation\BaseProject.Api\BaseProject.Api.csproj" />
+    <ProjectReference Include="..\BaseProject.CommonForTests\BaseProject.CommonForTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

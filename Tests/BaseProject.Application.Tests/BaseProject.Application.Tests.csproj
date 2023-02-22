@@ -18,14 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Core\BoxApi.Application\BoxApi.Application.csproj" />
-    <ProjectReference Include="..\..\Src\Infrastructure\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\BoxApi.CommonForTests\BoxApi.CommonForTests.csproj" />
+    <ProjectReference Include="..\..\Src\Core\BaseProject.Application\BaseProject.Application.csproj" />
+    <ProjectReference Include="..\..\Src\Infrastructure\BaseProject.Infrastructure\BaseProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\BaseProject.CommonForTests\BaseProject.CommonForTests.csproj" />
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="BoxApi\Commands\" />
-    <Folder Include="BoxApi\Queries\" />
+    <Folder Include="BaseProject\Commands\" />
+    <Folder Include="BaseProject\Queries\" />
     <Folder Include="Fixtures\" />
     <Folder Include="Validators\" />
   </ItemGroup>

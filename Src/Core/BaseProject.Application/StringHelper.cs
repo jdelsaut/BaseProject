@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BoxApi.Application
+namespace BaseProject.Application
 {
     public static class StringHelper
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Infrastructure.HttpHelper
+namespace BaseProject.Infrastructure.HttpHelper
 {
     public class BadRequestException : Exception
     {

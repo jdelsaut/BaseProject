@@ -1,9 +1,9 @@
-﻿using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Infrastructure.SmartID
+namespace BaseProject.Infrastructure.SmartID
 {
     public class SmartIDGenerator : ISmartIDGenerator
     {

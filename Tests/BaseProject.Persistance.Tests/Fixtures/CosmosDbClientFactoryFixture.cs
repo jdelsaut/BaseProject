@@ -1,9 +1,9 @@
 ﻿using Microsoft.Azure.Documents;
-using BoxApi.Persistance.Base;
+using BaseProject.Persistance.Base;
 using System;
 using System.Collections.Generic;
 
-namespace BoxApi.Persistance.Tests.Fixtures
+namespace BaseProject.Persistance.Tests.Fixtures
 {
     public class CosmosDbClientFactoryFixture : IDisposable
     {

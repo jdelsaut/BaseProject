@@ -2,11 +2,11 @@
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 using System;
-using BoxApi.Infrastructure.Settings;
+using BaseProject.Infrastructure.Settings;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace BoxApi.Infrastructure.Logging
+namespace BaseProject.Infrastructure.Logging
 {
     public class ApplicationInsightsLogger : IInsightsLogger
     {
@@ -65,13 +65,13 @@ namespace BoxApi.Infrastructure.Logging
             telemetryClient.TrackTrace(message, level);
         }
 
-        public void TrackMicroserviceCosmosDbThrottlingEvent(string BoxApiId, string functionName, IDictionary<string, double> metrics = null)
+        public void TrackMicroserviceCosmosDbThrottlingEvent(string BaseProjectId, string functionName, IDictionary<string, double> metrics = null)
         {
             this.TrackMicroserviceEvent(
                         new MicroServiceEventLog(
                             EventNames.COSMOSDB_REQUEST_THROTTLED,
                             functionName,
-                            BoxApiId,
+                            BaseProjectId,
                             "Critical",
                             "Request rate on ComsmosDB is getting too high, try increasing throughput",
                             settingsReader));

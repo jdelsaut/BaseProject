@@ -1,10 +1,10 @@
-﻿using BoxApi.Common.SerializerSettings;
+﻿using BaseProject.Common.SerializerSettings;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BoxApi.Common.CustomSerializer
+namespace BaseProject.Common.CustomSerializer
 {
     public static class CustomSerializer<T>
     {

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Acceptance.Helpers
+namespace BaseProject.Acceptance.Helpers
 {
     public class JsonNetSerializer : IRestSerializer
     {

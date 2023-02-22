@@ -1,20 +1,20 @@
-﻿using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Infrastructure.Logging
+namespace BaseProject.Infrastructure.Logging
 {
     public class MicroServiceEventLog : Dictionary<string, string>
     {
-        public MicroServiceEventLog(string eventName, string functionName, string BoxApiId, string level, string message, ISettingsReader settings)
+        public MicroServiceEventLog(string eventName, string functionName, string BaseProjectId, string level, string message, ISettingsReader settings)
             : base()
         {
             this["name"] = eventName;
-            this["microservice"] = "BoxApi";
+            this["microservice"] = "BaseProject";
             this["functionName"] = functionName;
             this["version"] = settings.ReadSetting(AppSettingsKeys.ApiVersion);
-            this["BoxApiId"] = BoxApiId;
+            this["BaseProjectId"] = BaseProjectId;
             this["level"] = level;
             this["message"] = message;
         }
@@ -23,7 +23,7 @@ namespace BoxApi.Infrastructure.Logging
         public string Microservice => this["microservice"];
         public string FunctionName => this["functionName"];
         public string Version => this["version"];
-        public string BoxApiId => this["BoxApiId"];
+        public string BaseProjectId => this["BaseProjectId"];
         public string Level => this["level"];
         public string Message => this["message"];
     }

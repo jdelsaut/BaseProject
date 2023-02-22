@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace BoxApi.Infrastructure.Helpers
+namespace BaseProject.Infrastructure.Helpers
 {
     public static class AsyncHelper
     {

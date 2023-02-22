@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Api.Messages
+namespace BaseProject.Api.Messages
 {
     public class ApiVersionResponse
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BoxApi.Persistance.Exceptions
+namespace BaseProject.Persistance.Exceptions
 {
     public class NotFoundException : Exception
     {

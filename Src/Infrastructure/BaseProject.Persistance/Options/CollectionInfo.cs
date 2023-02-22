@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Persistance.Options
+﻿namespace BaseProject.Persistance.Options
 {
     public class CollectionInfo
     {

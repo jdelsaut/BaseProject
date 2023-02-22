@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Infrastructure.Logging
+﻿namespace BaseProject.Infrastructure.Logging
 {
     public class MicroserviceRequestTelemetry
     {

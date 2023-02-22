@@ -1,7 +1,7 @@
-﻿using BoxApi.Infrastructure.Claims;
-using BoxApi.Infrastructure.Helpers;
-using BoxApi.Infrastructure.Proxy;
-using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Claims;
+using BaseProject.Infrastructure.Helpers;
+using BaseProject.Infrastructure.Proxy;
+using BaseProject.Infrastructure.Settings;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
@@ -14,7 +14,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Threading;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     public class AccessTokenValidateValueProvider : JwtSecurityTokenHandler
     {

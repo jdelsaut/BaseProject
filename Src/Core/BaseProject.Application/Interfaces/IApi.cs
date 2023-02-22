@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Application.Interfaces
+﻿namespace BaseProject.Application.Interfaces
 {
     public interface IApi
     {

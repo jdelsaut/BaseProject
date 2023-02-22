@@ -1,16 +1,16 @@
 ﻿using Assignment.Persistance.Base;
 using AutoMapper;
-using BoxApi.Api;
-using BoxApi.Api.AccessToken;
-using BoxApi.Application.Infrastructure;
-using BoxApi.Application.Interfaces;
-using BoxApi.Infrastructure;
-using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Proxy;
-using BoxApi.Infrastructure.Settings;
-using BoxApi.Infrastructure.SmartID;
-using BoxApi.Persistance;
-using BoxApi.Persistance.Extensions;
+using BaseProject.Api;
+using BaseProject.Api.AccessToken;
+using BaseProject.Application.Infrastructure;
+using BaseProject.Application.Interfaces;
+using BaseProject.Infrastructure;
+using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Proxy;
+using BaseProject.Infrastructure.Settings;
+using BaseProject.Infrastructure.SmartID;
+using BaseProject.Persistance;
+using BaseProject.Persistance.Extensions;
 using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
@@ -25,14 +25,14 @@ using System.Reflection;
 
 [assembly: WebJobsStartup(typeof(Startup))]
 [assembly: WebJobsStartup(typeof(StartupWebJob))]
-namespace BoxApi.Api
+namespace BaseProject.Api
 {
     public class Startup : FunctionsStartup
     {
-        private const string _BoxApiCosmosDbEndPoint = AppSettingsKeys.BoxApiCosmosDbEndpoint;
-        private const string _BoxApiCosmosDbPrimaryKey = AppSettingsKeys.BoxApiCosmosDbPrimaryKey;
-        private const string _cosmosDatabaseName = "BoxApi";
-        private const string _BoxApisCollectionName = "BoxApis";
+        private const string _BaseProjectCosmosDbEndPoint = AppSettingsKeys.BaseProjectCosmosDbEndpoint;
+        private const string _BaseProjectCosmosDbPrimaryKey = AppSettingsKeys.BaseProjectCosmosDbPrimaryKey;
+        private const string _cosmosDatabaseName = "BaseProject";
+        private const string _BaseProjectsCollectionName = "BaseProjects";
         private static string _proxyUrl = AppSettingsKeys.LocalHttpProxy;
 
         public override void Configure(IFunctionsHostBuilder builder)
@@ -50,7 +50,7 @@ namespace BoxApi.Api
         private static void RegisterRepository(IServiceCollection services, SettingsReader settingsReader)
         {
             RegisterCosmosDB(services, settingsReader);
-            services.AddTransient(typeof(IRepository), typeof(BoxApiRepository));
+            services.AddTransient(typeof(IRepository), typeof(BaseProjectRepository));
         }
 
         private static void RegisterApplicationServices(IServiceCollection services)
@@ -77,7 +77,7 @@ namespace BoxApi.Api
             (Uri serviceEndpoint, string authKey) = RetrieveCosmosDBAccess(settingsReader);
             var databaseName = _cosmosDatabaseName;
             var collectionNames = new List<string>();
-            collectionNames.Add(_BoxApisCollectionName);
+            collectionNames.Add(_BaseProjectsCollectionName);
             services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);
 
             services.AddHealthChecks(checks =>
@@ -88,8 +88,8 @@ namespace BoxApi.Api
 
         private static (Uri cosmosEndpoint, string cosmosKey) RetrieveCosmosDBAccess(SettingsReader settingsReader)
         {
-            var serviceEndpoint = settingsReader.ReadSetting(_BoxApiCosmosDbEndPoint);
-            var authKey = settingsReader.ReadSetting(_BoxApiCosmosDbPrimaryKey);
+            var serviceEndpoint = settingsReader.ReadSetting(_BaseProjectCosmosDbEndPoint);
+            var authKey = settingsReader.ReadSetting(_BaseProjectCosmosDbPrimaryKey);
             return (new Uri(serviceEndpoint), authKey);
         }
 

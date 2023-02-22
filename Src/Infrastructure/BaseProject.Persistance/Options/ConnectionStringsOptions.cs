@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Persistance.Options
+namespace BaseProject.Persistance.Options
 {
     public enum ConnectionStringMode
     {

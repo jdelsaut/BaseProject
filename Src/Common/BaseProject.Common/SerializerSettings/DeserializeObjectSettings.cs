@@ -1,8 +1,8 @@
-﻿using BoxApi.Common.Exceptions;
+﻿using BaseProject.Common.Exceptions;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace BoxApi.Common.SerializerSettings
+namespace BaseProject.Common.SerializerSettings
 {
     public class DeserializeObjectSettings
     {

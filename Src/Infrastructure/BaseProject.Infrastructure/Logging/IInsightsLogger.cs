@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace BoxApi.Infrastructure.Logging
+namespace BaseProject.Infrastructure.Logging
 {
     public interface IInsightsLogger
     {
@@ -12,7 +12,7 @@ namespace BoxApi.Infrastructure.Logging
         void StopOperation(IOperationHolder<RequestTelemetry> operation);
         void TrackException(Exception e);
         void TrackMicroserviceEvent(MicroServiceEventLog microserviceEvent, IDictionary<string, double> metrics = null);
-        void TrackMicroserviceCosmosDbThrottlingEvent(string BoxApiId, string functionName, IDictionary<string, double> metrics = null);
+        void TrackMicroserviceCosmosDbThrottlingEvent(string BaseProjectId, string functionName, IDictionary<string, double> metrics = null);
         void TrackTrace(string message, SeverityLevel level);
     }
 }

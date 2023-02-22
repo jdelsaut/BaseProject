@@ -1,22 +1,22 @@
-﻿using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Settings;
-using BoxApi.Persistance.Base;
-using BoxApi.Persistance.Exceptions;
-using BoxApi.Persistance.Interfaces;
+﻿using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Settings;
+using BaseProject.Persistance.Base;
+using BaseProject.Persistance.Exceptions;
+using BaseProject.Persistance.Interfaces;
 using Microsoft.Azure.Documents;
 using Newtonsoft.Json;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BoxApi.Persistance
+namespace BaseProject.Persistance
 {
-    public class BoxApiRepository : CosmosDbRepository<object>, IRepository
+    public class BaseProjectRepository : CosmosDbRepository<object>, IRepository
     {
         private readonly IInsightsLogger insightsLogger;
         private readonly ISettingsReader settings;
 
-        public BoxApiRepository(
+        public BaseProjectRepository(
             ICosmosDbClientFactory factory,
             IInsightsLogger insightsLogger,
             ISettingsReader settings) : base(factory) {
@@ -24,7 +24,7 @@ namespace BoxApi.Persistance
             this.settings = settings;
         }
 
-        public override string CollectionName { get; } = "BoxApis";
+        public override string CollectionName { get; } = "BaseProjects";
         public override PartitionKey ResolvePartitionKey(string entityId) => new PartitionKey(entityId.Split(':')[0]);
 
 

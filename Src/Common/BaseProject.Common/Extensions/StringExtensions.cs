@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace BoxApi.Common.Extensions
+namespace BaseProject.Common.Extensions
 {
     public static class StringExtensions
     {

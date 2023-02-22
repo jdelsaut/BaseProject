@@ -1,4 +1,4 @@
-﻿using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Settings;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoxApi.Infrastructure
+namespace BaseProject.Infrastructure
 {
     public class TokenGenerator : ITokenGenerator
     {
@@ -31,7 +31,7 @@ namespace BoxApi.Infrastructure
             //scopes related to all the clients use by Assignment to call external apis (eg. "scope scope scope").
             //empty space is use to separate scopes within the "scope" strings here. Be aware of this point when modifying this string.
 
-            string scope = $@"{Scopes.Scopes.BoxApiWrite} {Scopes.Scopes.BoxApiRead}";
+            string scope = $@"{Scopes.Scopes.BaseProjectWrite} {Scopes.Scopes.BaseProjectRead}";
 
             var tokenEndpoint = new Uri(_settingsReader.ReadSetting(RootAuthEndpoint) + "/token");
 

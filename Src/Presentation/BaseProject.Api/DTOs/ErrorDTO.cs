@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Api.DTOs
+namespace BaseProject.Api.DTOs
 {
     public class ErrorDTO
     {

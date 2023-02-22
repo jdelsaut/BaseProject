@@ -1,4 +1,4 @@
-﻿using BoxApi.Acceptance.Exceptions;
+﻿using BaseProject.Acceptance.Exceptions;
 using Newtonsoft.Json;
 using Polly;
 using RestSharp;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace BoxApi.Acceptance.Helpers
+namespace BaseProject.Acceptance.Helpers
 {
     public class HttpRequestWrapper
     {

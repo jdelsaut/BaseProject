@@ -1,4 +1,4 @@
-﻿using BoxApi.Persistance.Base;
+﻿using BaseProject.Persistance.Base;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -6,7 +6,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 
-namespace BoxApi.Persistance.Extensions
+namespace BaseProject.Persistance.Extensions
 {
     public static class ServiceCollectionCosmosDbExtensions
     {

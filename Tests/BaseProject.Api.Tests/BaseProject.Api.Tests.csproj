@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Infrastructure\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Src\Presentation\BoxApi.Api\BoxApi.Api.csproj" />
-    <ProjectReference Include="..\BoxApi.CommonForTests\BoxApi.CommonForTests.csproj" />
+    <ProjectReference Include="..\..\Src\Infrastructure\BaseProject.Infrastructure\BaseProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Src\Presentation\BaseProject.Api\BaseProject.Api.csproj" />
+    <ProjectReference Include="..\BaseProject.CommonForTests\BaseProject.CommonForTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,8 +1,8 @@
 ﻿
-using BoxApi.Api.AccessToken;
-using BoxApi.Api.Messages;
-using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Settings;
+using BaseProject.Api.AccessToken;
+using BaseProject.Api.Messages;
+using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Settings;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BoxApi.Api.Functions
+namespace BaseProject.Api.Functions
 {
     public class VersionFunctions
     {

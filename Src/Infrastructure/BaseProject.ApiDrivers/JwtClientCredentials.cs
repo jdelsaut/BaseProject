@@ -1,9 +1,9 @@
 ﻿using System;
-using BoxApi.Infrastructure.Settings;
+using BaseProject.Infrastructure.Settings;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.ApiDrivers
+namespace BaseProject.ApiDrivers
 {
     public static class JwtClientCredentials
     {

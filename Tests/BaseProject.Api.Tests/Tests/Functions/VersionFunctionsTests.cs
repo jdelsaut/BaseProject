@@ -1,11 +1,11 @@
 ﻿
-using BoxApi.Api.Functions;
-using BoxApi.Api.Messages;
-using BoxApi.Api.Tests.Fixtures;
-using BoxApi.Api.Tests.Helpers;
-using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Scopes;
-using BoxApi.Infrastructure.Settings;
+using BaseProject.Api.Functions;
+using BaseProject.Api.Messages;
+using BaseProject.Api.Tests.Fixtures;
+using BaseProject.Api.Tests.Helpers;
+using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Scopes;
+using BaseProject.Infrastructure.Settings;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Logging;
@@ -17,7 +17,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace BoxApi.Api.Tests.Tests.Functions
+namespace BaseProject.Api.Tests.Tests.Functions
 {
     public class VersionFunctionsTests
     {
@@ -50,7 +50,7 @@ namespace BoxApi.Api.Tests.Tests.Functions
             #region Arrange
             var request = HttpHelpers.CreateMockHttpRequestMessage(string.Empty);
 
-            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BoxApiRead);
+            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BaseProjectRead);
             #endregion
 
             #region Act
@@ -77,7 +77,7 @@ namespace BoxApi.Api.Tests.Tests.Functions
         //    settingsReader.Setup(x => x.ReadSetting(AppSettingsKeys.VersionDescription))
         //       .Returns("Not Stable");
 
-        //    AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BoxApiRead);
+        //    AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BaseProjectRead);
 
         //    #endregion
 
@@ -107,7 +107,7 @@ namespace BoxApi.Api.Tests.Tests.Functions
 
             _insightsLoggerMock.Setup(x => x.StopOperation(It.IsAny<IOperationHolder<RequestTelemetry>>()));
 
-            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BoxApiRead);
+            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BaseProjectRead);
             #endregion
 
             #region Act
@@ -146,7 +146,7 @@ namespace BoxApi.Api.Tests.Tests.Functions
             settingsReader.Setup(x => x.ReadSetting(It.IsAny<string>()))
                 .Throws(new System.Exception("Error reading settings"));
 
-            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BoxApiRead);
+            AccessTokenFixture.SettingClaimsPrincipal(_claimsPrincipal, Scopes.BaseProjectRead);
             #endregion
 
             #region Act

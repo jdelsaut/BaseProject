@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace BoxApi.Infrastructure
+namespace BaseProject.Infrastructure
 {
     public interface ITokenGenerator
     {

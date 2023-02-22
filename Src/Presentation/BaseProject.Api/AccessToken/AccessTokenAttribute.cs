@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     [AttributeUsage(AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
     [Binding]

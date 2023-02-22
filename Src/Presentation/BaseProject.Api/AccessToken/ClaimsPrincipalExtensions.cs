@@ -1,16 +1,16 @@
-﻿using BoxApi.Api.Constants;
-using BoxApi.Infrastructure.Claims;
+﻿using BaseProject.Api.Constants;
+using BaseProject.Infrastructure.Claims;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security.Claims;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     public static class ClaimsPrincipalExtensions
     {
-        public static KeyValuePair<HttpStatusCode, string> GetAuthorizationInformation(this ClaimsPrincipal claimsPrincipal, string methodName, string BoxApiType)
+        public static KeyValuePair<HttpStatusCode, string> GetAuthorizationInformation(this ClaimsPrincipal claimsPrincipal, string methodName, string BaseProjectType)
         {
             if (!claimsPrincipal.Identities.Any() || !claimsPrincipal.Claims.Any())
             {
@@ -29,7 +29,7 @@ namespace BoxApi.Api.AccessToken
 
             if (!EndpointsInfo.Endpoints.IsEmpty)
             {
-                var key = EndpointsInfo.BuildAccessKey(methodName, BoxApiType);
+                var key = EndpointsInfo.BuildAccessKey(methodName, BaseProjectType);
                 endpointInfo = EndpointsInfo.Endpoints.Where(e => e.Key.Equals(key)).FirstOrDefault();
             }
 

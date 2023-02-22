@@ -2,7 +2,7 @@
 using Assignment.Persistance.Base;
 using System.Threading.Tasks;
 
-namespace BoxApi.Persistance.Base
+namespace BaseProject.Persistance.Base
 {
     public abstract class CosmosDbRepository <T> : IRepository, IDocumentCollectionContext<T>
     {

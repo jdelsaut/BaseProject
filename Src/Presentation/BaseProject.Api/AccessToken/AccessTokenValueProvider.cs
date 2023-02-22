@@ -1,4 +1,4 @@
-﻿using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.Settings;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoxApi.Api.AccessToken
+namespace BaseProject.Api.AccessToken
 {
     /// <summary>
     /// Creates a <see cref="ClaimsPrincipal"/> instance for the supplied header and configuration values.

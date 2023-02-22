@@ -29,7 +29,7 @@ steps:
 - task: FileTransform@1
   displayName: 'File Transform: CosmosDB TestSettings'
   inputs:
-    folderPath: Tests/BoxApi.Persistance.Tests
+    folderPath: Tests/BaseProject.Persistance.Tests
     fileType: json
     targetFiles: local.settings.json
 
@@ -74,7 +74,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: ARM Template'
   inputs:
-    PathtoPublish: 'Infra/BoxApi.Api.ARM'
+    PathtoPublish: 'Infra/BaseProject.Api.ARM'
     ArtifactName: 'drop_API_ARM'
 
 - task: PublishBuildArtifacts@1
@@ -85,10 +85,10 @@ steps:
 
 - task: Pickles@1
   inputs:
-    featureDir: 'Tests\BoxApi.Acceptance\Features'
+    featureDir: 'Tests\BaseProject.Acceptance\Features'
     docFormat: 'DHtml'
     out: '$(build.artifactstagingdirectory)/Documentation'
-    sutv: 'BoxApi'
+    sutv: 'BaseProject'
     enableComments: true
     experimentalFeatures: true
 

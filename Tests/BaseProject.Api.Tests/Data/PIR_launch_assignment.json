@@ -2,7 +2,7 @@
   "case_id": "9de93dcf-abf2-4f93-8cdc-fc9090f9a85c",
   "case_request_id": "e872c9a3-694b-4cc3-8059-dc5aef1e9f6f",
   "assignment_type": "Roadside",
-  "BoxApi_criteria": {
+  "BaseProject_criteria": {
     "assignable_providers": [
       {
         "provider_id": "5b7b4ced-694d-40c5-b4d9-2fbee03a5e07",

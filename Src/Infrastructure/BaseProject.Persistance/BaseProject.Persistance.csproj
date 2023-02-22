@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\BoxApi.Domain\BoxApi.Domain.csproj" />
-    <ProjectReference Include="..\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Core\BaseProject.Domain\BaseProject.Domain.csproj" />
+    <ProjectReference Include="..\BaseProject.Infrastructure\BaseProject.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

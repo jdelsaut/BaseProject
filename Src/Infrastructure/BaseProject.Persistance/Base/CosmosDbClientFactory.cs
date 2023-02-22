@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoxApi.Persistance.Base
+namespace BaseProject.Persistance.Base
 {
     public class CosmosDbClientFactory : ICosmosDbClientFactory
     {

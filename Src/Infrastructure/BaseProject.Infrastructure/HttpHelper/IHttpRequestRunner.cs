@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BoxApi.Infrastructure
+namespace BaseProject.Infrastructure
 {
     public interface IHttpRequestRunner<TContent, TResponse>
     {

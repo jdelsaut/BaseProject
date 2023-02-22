@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Infrastructure.Claims
+﻿namespace BaseProject.Infrastructure.Claims
 {
     public struct JwtPrivateClaimNames
     {

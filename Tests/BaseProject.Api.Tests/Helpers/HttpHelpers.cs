@@ -8,7 +8,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 
-namespace BoxApi.Api.Tests.Helpers
+namespace BaseProject.Api.Tests.Helpers
 {
     public static class HttpHelpers
     {

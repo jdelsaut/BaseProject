@@ -1,9 +1,9 @@
-﻿using BoxApi.Api.Functions;
-using BoxApi.Infrastructure.Scopes;
+﻿using BaseProject.Api.Functions;
+using BaseProject.Infrastructure.Scopes;
 using System;
 using System.Collections.Concurrent;
 
-namespace BoxApi.Api
+namespace BaseProject.Api
 {
     public static class EndpointsInfo
     {
@@ -17,8 +17,8 @@ namespace BoxApi.Api
             Endpoints.TryAdd(nameof(VersionFunctions.Version), BuildScopeList());
 
             //Specific Roadside scopes
-            Endpoints.TryAdd(BuildAccessKey(nameof(BoxApiFunctions.BoxApi_Starter), ScopesKeyPrefix), Scopes.BoxApiWrite);
-            Endpoints.TryAdd(BuildAccessKey(nameof(BoxApiFunctions.GetBoxApiById), ScopesKeyPrefix), Scopes.BoxApiRead);
+            Endpoints.TryAdd(BuildAccessKey(nameof(BaseProjectFunctions.BaseProject_Starter), ScopesKeyPrefix), Scopes.BaseProjectWrite);
+            Endpoints.TryAdd(BuildAccessKey(nameof(BaseProjectFunctions.GetBaseProjectById), ScopesKeyPrefix), Scopes.BaseProjectRead);
         }
 
         public static string BuildAccessKey(string functionName, string keyPrefix)

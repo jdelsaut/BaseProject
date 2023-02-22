@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BoxApi.Common.Exceptions
+namespace BaseProject.Common.Exceptions
 {
     public class NotInEnumException : Exception
     {

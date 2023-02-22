@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Core\BoxApi.Application\BoxApi.Application.csproj" />
-    <ProjectReference Include="..\..\Src\Infrastructure\BoxApi.Persistance\BoxApi.Persistance.csproj" />
+    <ProjectReference Include="..\..\Src\Core\BaseProject.Application\BaseProject.Application.csproj" />
+    <ProjectReference Include="..\..\Src\Infrastructure\BaseProject.Persistance\BaseProject.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

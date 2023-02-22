@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BoxApi.Application.Exceptions
+namespace BaseProject.Application.Exceptions
 {
     public class ValidationException : Exception
     {

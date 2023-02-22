@@ -2,7 +2,7 @@
 using Microsoft.Extensions.HealthChecks;
 using System;
 
-namespace BoxApi.Persistance.Extensions
+namespace BaseProject.Persistance.Extensions
 {
     public static class HealthCheckBuilderCosmosDbExtensions
     {

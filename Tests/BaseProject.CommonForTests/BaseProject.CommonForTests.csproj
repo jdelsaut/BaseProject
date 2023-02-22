@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Core\BoxApi.Domain\BoxApi.Domain.csproj" />
+    <ProjectReference Include="..\..\Src\Core\BaseProject.Domain\BaseProject.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

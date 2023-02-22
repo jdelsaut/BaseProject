@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http;
 
-namespace BoxApi.Infrastructure.Proxy
+namespace BaseProject.Infrastructure.Proxy
 {
     public class ProxyAwareHttpClientHandler : HttpClientHandler
     {

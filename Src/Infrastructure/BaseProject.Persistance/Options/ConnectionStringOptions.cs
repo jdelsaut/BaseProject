@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BoxApi.Persistance.Options
+namespace BaseProject.Persistance.Options
 {
     public class ConnectionStringOptions
     {

@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\BoxApi.Application\BoxApi.Application.csproj" />
+    <ProjectReference Include="..\..\Core\BaseProject.Application\BaseProject.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,5 @@
-﻿using BoxApi.Infrastructure.HttpHelper;
-using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Infrastructure.HttpHelper;
+using BaseProject.Infrastructure.Settings;
 using Newtonsoft.Json;
 using Polly;
 using Polly.Retry;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BoxApi.Infrastructure
+namespace BaseProject.Infrastructure
 {
     public class HttpRequestRunner<TContent, TResponse> : IHttpRequestRunner<TContent, TResponse>
     {

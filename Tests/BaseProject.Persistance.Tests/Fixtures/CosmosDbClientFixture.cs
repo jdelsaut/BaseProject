@@ -1,11 +1,11 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Newtonsoft.Json;
-using BoxApi.Persistance.Base;
+using BaseProject.Persistance.Base;
 using System;
 using System.IO;
 
-namespace BoxApi.Persistance.Tests.Fixtures
+namespace BaseProject.Persistance.Tests.Fixtures
 {
     public class CosmosDbClientFixture : IDisposable
     {

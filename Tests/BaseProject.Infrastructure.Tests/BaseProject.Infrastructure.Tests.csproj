@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Core\BoxApi.Application\BoxApi.Application.csproj" />
-    <ProjectReference Include="..\..\Src\Core\BoxApi.Domain\BoxApi.Domain.csproj" />
-    <ProjectReference Include="..\..\Src\Presentation\BoxApi.Api\BoxApi.Api.csproj" />
-    <ProjectReference Include="..\BoxApi.Common.Tests\BoxApi.Common.Tests.csproj" />
-    <ProjectReference Include="..\BoxApi.CommonForTests\BoxApi.CommonForTests.csproj" />
+    <ProjectReference Include="..\..\Src\Core\BaseProject.Application\BaseProject.Application.csproj" />
+    <ProjectReference Include="..\..\Src\Core\BaseProject.Domain\BaseProject.Domain.csproj" />
+    <ProjectReference Include="..\..\Src\Presentation\BaseProject.Api\BaseProject.Api.csproj" />
+    <ProjectReference Include="..\BaseProject.Common.Tests\BaseProject.Common.Tests.csproj" />
+    <ProjectReference Include="..\BaseProject.CommonForTests\BaseProject.CommonForTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

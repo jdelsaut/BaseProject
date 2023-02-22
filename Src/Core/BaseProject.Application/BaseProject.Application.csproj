@@ -16,14 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\BoxApi.Persistance\BoxApi.Persistance.csproj" />
-    <ProjectReference Include="..\BoxApi.Domain\BoxApi.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BaseProject.Infrastructure\BaseProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BaseProject.Persistance\BaseProject.Persistance.csproj" />
+    <ProjectReference Include="..\BaseProject.Domain\BaseProject.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BoxApi\Commands\" />
-    <Folder Include="BoxApi\Queries\" />
+    <Folder Include="BaseProject\Commands\" />
+    <Folder Include="BaseProject\Queries\" />
     <Folder Include="Validators\CommonValidators\" />
   </ItemGroup>
 

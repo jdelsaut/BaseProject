@@ -1,7 +1,7 @@
-﻿using BoxApi.Api.AccessToken;
-using BoxApi.Api.Tests.Fixtures;
-using BoxApi.Api.Tests.Helpers;
-using BoxApi.Infrastructure.Settings;
+﻿using BaseProject.Api.AccessToken;
+using BaseProject.Api.Tests.Fixtures;
+using BaseProject.Api.Tests.Helpers;
+using BaseProject.Infrastructure.Settings;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using Microsoft.Extensions.Primitives;
@@ -13,7 +13,7 @@ using System.Security.Claims;
 using System.Threading;
 using Xunit;
 
-namespace BoxApi.Api.Tests.Tests
+namespace BaseProject.Api.Tests.Tests
 {
     public class AccessTokenTests : IClassFixture<AccessTokenFixture>
     {

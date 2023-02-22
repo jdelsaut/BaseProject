@@ -19,9 +19,9 @@
 
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\Core\BoxApi.Application\BoxApi.Application.csproj" />
-		<ProjectReference Include="..\..\Infrastructure\BoxApi.ApiDrivers\BoxApi.ApiDrivers.csproj" />
-		<ProjectReference Include="..\..\Infrastructure\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Core\BaseProject.Application\BaseProject.Application.csproj" />
+		<ProjectReference Include="..\..\Infrastructure\BaseProject.ApiDrivers\BaseProject.ApiDrivers.csproj" />
+		<ProjectReference Include="..\..\Infrastructure\BaseProject.Infrastructure\BaseProject.Infrastructure.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="local.settings.json">

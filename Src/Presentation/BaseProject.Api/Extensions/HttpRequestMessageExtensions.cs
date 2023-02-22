@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
-using BoxApi.Api.Constants;
-using BoxApi.Infrastructure.Logging;
+using BaseProject.Api.Constants;
+using BaseProject.Infrastructure.Logging;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.Azure.Documents;
 using Newtonsoft.Json;
-using BoxApi.Application.Exceptions;
+using BaseProject.Application.Exceptions;
 
-namespace BoxApi.Api.Extensions
+namespace BaseProject.Api.Extensions
 {
     public static class HttpRequestMessageExtensions
     {

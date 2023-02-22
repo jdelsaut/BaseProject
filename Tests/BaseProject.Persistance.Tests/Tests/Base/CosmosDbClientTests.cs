@@ -1,13 +1,13 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Moq;
-using BoxApi.Persistance.Base;
+using BaseProject.Persistance.Base;
 using System;
 using System.Threading;
 using Xunit;
-using BoxApi.Persistance.Tests.Fixtures;
+using BaseProject.Persistance.Tests.Fixtures;
 
-namespace BoxApi.Persistance.Tests.Tests.Base
+namespace BaseProject.Persistance.Tests.Tests.Base
 {
     public class CosmosDbClientTests : IClassFixture<CosmosDbClientFixture>
     {

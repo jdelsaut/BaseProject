@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BoxApi.Persistance.Base
+namespace BaseProject.Persistance.Base
 {
     public interface ICosmosDbClientFactory
     {

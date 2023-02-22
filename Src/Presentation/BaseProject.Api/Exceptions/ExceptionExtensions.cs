@@ -1,7 +1,7 @@
-﻿using BoxApi.Application.Exceptions;
+﻿using BaseProject.Application.Exceptions;
 using System;
 
-namespace BoxApi.Api.Exceptions
+namespace BaseProject.Api.Exceptions
 {
     public static class ExceptionExtensions
     {

@@ -57,7 +57,7 @@
             "sensitivities": "Safety risk to the customer",
             "vulnerabilities": "Wheelchair user"
         },
-        "BoxApi_criteria": {
+        "BaseProject_criteria": {
             "assignable_providers": []
         },
         "contacts": [

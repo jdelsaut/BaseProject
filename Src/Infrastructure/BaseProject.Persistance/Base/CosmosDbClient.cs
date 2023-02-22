@@ -7,7 +7,7 @@ using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 
-namespace BoxApi.Persistance.Base
+namespace BaseProject.Persistance.Base
 {
     public class CosmosDbClient : ICosmosDbClient
     {

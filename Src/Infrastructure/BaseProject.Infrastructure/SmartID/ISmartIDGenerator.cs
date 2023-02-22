@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoxApi.Infrastructure.SmartID
+namespace BaseProject.Infrastructure.SmartID
 {
     public interface ISmartIDGenerator
     {

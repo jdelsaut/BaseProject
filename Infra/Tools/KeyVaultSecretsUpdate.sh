@@ -12,10 +12,10 @@
 #     [Optional]  ${5}  <param_COSMOSDB_NAME> Name of the CosmosDB associated with the Function App
 #     [Optional]  ${6}  <param_MASTER_CONNECTIONSTRING_SECRET_NAME>  Secret name of the Master database connection string inside Keyvault
 #     [Optional]  ${7}  <param_SERVICE_BUS_NAMESPACE_NAME>  The service bus namespace nameconnection string inside Keyvault
-#     [Optional]  ${8}  <param_ASS_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BoxApi microservice retrieve Assignment response
-#     [Optional]  ${9}  <param_SAS_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BoxApi microservice retrieve SearchAndSelect response
-#     [Optional]  ${10} <param_MISSION_CREATION_TOPIC_NAME> Name of the service bus topic used by BoxApi microservice to send mission creation request to FollowUp microservice
-#     [Optional]  ${11} <param_FWU_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BoxApi microservice to listen followup responses
+#     [Optional]  ${8}  <param_ASS_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BaseProject microservice retrieve Assignment response
+#     [Optional]  ${9}  <param_SAS_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BaseProject microservice retrieve SearchAndSelect response
+#     [Optional]  ${10} <param_MISSION_CREATION_TOPIC_NAME> Name of the service bus topic used by BaseProject microservice to send mission creation request to FollowUp microservice
+#     [Optional]  ${11} <param_FWU_RESPONSE_TOPIC_NAME> Name of the service bus topic used by BaseProject microservice to listen followup responses
 
 #Setting KeyVault Policies for AzureDevOps Agents + Azure function
 spID=$(az resource show --resource-group ${2} --name ${1} --resource-type "Microsoft.Web/sites" --query identity.principalId --out tsv)
@@ -25,19 +25,19 @@ az keyvault set-policy --name "${3}" --resource-group "${4}" --spn $servicePrinc
 
 # Setting Azure Keyvault Secret : CosmosDB Primary Key
 cosmosDbKey=$(az cosmosdb keys list --name "${5}" --resource-group "${2}" --query primaryMasterKey --output tsv)
-secretPrimaryKeyURI=$(az keyvault secret set --vault-name "${3}" --name BoxApiCosmosDbPrimaryKey --value $cosmosDbKey --query id --output tsv)
+secretPrimaryKeyURI=$(az keyvault secret set --vault-name "${3}" --name BaseProjectCosmosDbPrimaryKey --value $cosmosDbKey --query id --output tsv)
 
 # Setting primaryKey secret URI on environement variable
 secretPrimaryKeyURI="@Microsoft.KeyVault(SecretUri=$secretPrimaryKeyURI)"
-echo "##vso[task.setvariable variable=BoxApiCosmosDbPrimaryKey]$secretPrimaryKeyURI"
+echo "##vso[task.setvariable variable=BaseProjectCosmosDbPrimaryKey]$secretPrimaryKeyURI"
 
 # Setting Azure Keyvault Secret : CosmosDB EndPoint
 cosmosDnEndpoint=$(az cosmosdb show --name "${5}" --resource-group "${2}" --query documentEndpoint --output tsv)
-cosmosDbEndpointSecretURI=$(az keyvault secret set --vault-name "${3}" --name BoxApiCosmosDbEndpoint --value $cosmosDnEndpoint --query id --output tsv)
+cosmosDbEndpointSecretURI=$(az keyvault secret set --vault-name "${3}" --name BaseProjectCosmosDbEndpoint --value $cosmosDnEndpoint --query id --output tsv)
 
 # Setting endpoint secret URI on environement variable
 cosmosDbEndpointSecretURI="@Microsoft.KeyVault(SecretUri=$cosmosDbEndpointSecretURI)"
-echo "##vso[task.setvariable variable=BoxApiCosmosDbEndpoint]$cosmosDbEndpointSecretURI"
+echo "##vso[task.setvariable variable=BaseProjectCosmosDbEndpoint]$cosmosDbEndpointSecretURI"
 
 echo "Setting up the last master provider connectionstring for changefeeds"
 masterCosmosDbConnectionString=$(az keyvault secret show --vault-name ${3} --name "${6}" --query id --output tsv)

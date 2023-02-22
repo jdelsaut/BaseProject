@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace BoxApi.Api.Exceptions
+namespace BaseProject.Api.Exceptions
 {
-    public class BoxApiRequestException : Exception
+    public class BaseProjectRequestException : Exception
     {
-        public BoxApiRequestException(string message) : base(message)
+        public BaseProjectRequestException(string message) : base(message)
         {
         }
     }

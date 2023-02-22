@@ -1,4 +1,4 @@
-﻿namespace BoxApi.Persistance.Base
+﻿namespace BaseProject.Persistance.Base
 {
     public interface IDocumentCollectionContext<T>
     {

@@ -1,10 +1,10 @@
-﻿using BoxApi.Common.Exceptions;
+﻿using BaseProject.Common.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Linq;
 
-namespace BoxApi.Common.JsonConverters
+namespace BaseProject.Common.JsonConverters
 {
     public class EnumIntoStringAndValidatorConverter : StringEnumConverter
     {

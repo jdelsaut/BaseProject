@@ -1,15 +1,15 @@
-﻿using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Settings;
-using BoxApi.Persistance.Base;
+﻿using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Settings;
+using BaseProject.Persistance.Base;
 using Microsoft.Azure.Documents;
 using Moq;
 using System;
 
-namespace BoxApi.Persistance.Tests.Fixtures
+namespace BaseProject.Persistance.Tests.Fixtures
 {
-    public class BoxApiRepositoryFixture : IDisposable
+    public class BaseProjectRepositoryFixture : IDisposable
     {
-        public string CollectionName { get; } = "fakeBoxApiCollection";
+        public string CollectionName { get; } = "fakeBaseProjectCollection";
 
         public Mock<IInsightsLogger> InsightsLoggerMock = new Mock<IInsightsLogger>();
         public Mock<ISettingsReader> SettingsReaderMock = new Mock<ISettingsReader>();
@@ -19,7 +19,7 @@ namespace BoxApi.Persistance.Tests.Fixtures
             return new Mock<ICosmosDbClient>();
         }
 
-        public Mock<BoxApiRepository> CreateBoxApiRepositoryMockForTesting(ICosmosDbClient cosmosDbClient)
+        public Mock<BaseProjectRepository> CreateBaseProjectRepositoryMockForTesting(ICosmosDbClient cosmosDbClient)
         {
             var factoryStub = new Mock<ICosmosDbClientFactory>();
             factoryStub.Setup(x => x.GetClient(CollectionName)).Returns(cosmosDbClient);
@@ -27,7 +27,7 @@ namespace BoxApi.Persistance.Tests.Fixtures
             SettingsReaderMock.Setup(x => x.ReadSetting(AppSettingsKeys.ApiVersion))
                 .Returns("01");
 
-            var sut = new Mock<BoxApiRepository>(factoryStub.Object, InsightsLoggerMock.Object, SettingsReaderMock.Object);
+            var sut = new Mock<BaseProjectRepository>(factoryStub.Object, InsightsLoggerMock.Object, SettingsReaderMock.Object);
             sut.Setup(x => x.CollectionName).Returns(CollectionName);
             sut.CallBase = true;
 

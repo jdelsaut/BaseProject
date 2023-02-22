@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
-using BoxApi.Api.AccessToken;
-using BoxApi.Api.Constants;
-using BoxApi.Api.DTOs;
-using BoxApi.Api.Exceptions;
-using BoxApi.Application.Exceptions;
-using BoxApi.Common.CustomSerializer;
-using BoxApi.Infrastructure.HttpHelper;
-using BoxApi.Infrastructure.Logging;
-using BoxApi.Infrastructure.Settings;
-using BoxApi.Infrastructure.SmartID;
-using BoxApi.Persistance.Exceptions;
+using BaseProject.Api.AccessToken;
+using BaseProject.Api.Constants;
+using BaseProject.Api.DTOs;
+using BaseProject.Api.Exceptions;
+using BaseProject.Application.Exceptions;
+using BaseProject.Common.CustomSerializer;
+using BaseProject.Infrastructure.HttpHelper;
+using BaseProject.Infrastructure.Logging;
+using BaseProject.Infrastructure.Settings;
+using BaseProject.Infrastructure.SmartID;
+using BaseProject.Persistance.Exceptions;
 using MediatR;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
@@ -21,9 +21,9 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace BoxApi.Api.Functions
+namespace BaseProject.Api.Functions
 {
-    public class BoxApiFunctions
+    public class BaseProjectFunctions
     {
         private readonly IInsightsLogger _insightsLogger;
         private readonly ISettingsReader _settingsReader;
@@ -31,7 +31,7 @@ namespace BoxApi.Api.Functions
         private readonly IMediator _mediator;
         private readonly ISmartIDGenerator _smartIDGenerator;
 
-        public BoxApiFunctions(IInsightsLogger insightsLogger, ISettingsReader settingsReader, IMapper mapper, IMediator mediator, ISmartIDGenerator smartIDGenerator)
+        public BaseProjectFunctions(IInsightsLogger insightsLogger, ISettingsReader settingsReader, IMapper mapper, IMediator mediator, ISmartIDGenerator smartIDGenerator)
         {
             _insightsLogger = insightsLogger;
             _settingsReader = settingsReader;
@@ -40,17 +40,17 @@ namespace BoxApi.Api.Functions
             _smartIDGenerator = smartIDGenerator;
         }
 
-        [FunctionName("BoxApi_Starter")]
-        public async Task<HttpResponseMessage> BoxApi_Starter(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "{BoxApi_type}/BoxApis")] HttpRequestMessage req,
-            string BoxApi_type,
+        [FunctionName("BaseProject_Starter")]
+        public async Task<HttpResponseMessage> BaseProject_Starter(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "{BaseProject_type}/BaseProjects")] HttpRequestMessage req,
+            string BaseProject_type,
             [AccessToken] ClaimsPrincipal principal)
         {
             #region Starting Global Operation logging
             (var telemetryRequest, var operation) = _insightsLogger.StartOperation(
                 new MicroserviceRequestTelemetry(
                 Guid.NewGuid().ToString(),
-                "/BoxApi_Starter",
+                "/BaseProject_Starter",
                 string.Empty,
                 string.Empty)
                 );
@@ -58,7 +58,7 @@ namespace BoxApi.Api.Functions
 
             try
             {
-                var authorization = principal.GetAuthorizationInformation(nameof(BoxApiFunctions.BoxApi_Starter));
+                var authorization = principal.GetAuthorizationInformation(nameof(BaseProjectFunctions.BaseProject_Starter));
 
                 if (authorization.Key != HttpStatusCode.OK)
                 {
@@ -96,24 +96,24 @@ namespace BoxApi.Api.Functions
 
         }
 
-        [FunctionName("BoxApi_GET")]
-        public async Task<HttpResponseMessage> GetBoxApiById(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "{BoxApi_type}/BoxApis/{BoxApiId}")]HttpRequestMessage req,
-            string BoxApi_type,
-            string BoxApiId,
+        [FunctionName("BaseProject_GET")]
+        public async Task<HttpResponseMessage> GetBaseProjectById(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "{BaseProject_type}/BaseProjects/{BaseProjectId}")]HttpRequestMessage req,
+            string BaseProject_type,
+            string BaseProjectId,
             [AccessToken] ClaimsPrincipal principal)
         {
             (var telemetryRequest, var operation) = _insightsLogger.StartOperation(
                 new MicroserviceRequestTelemetry(
                 Guid.NewGuid().ToString(),
-                "/GetBoxApiByid",
+                "/GetBaseProjectByid",
                 string.Empty,
                 string.Empty)
                 );
 
             try
             {
-                var authorization = principal.GetAuthorizationInformation(nameof(BoxApiFunctions.GetBoxApiById));
+                var authorization = principal.GetAuthorizationInformation(nameof(BaseProjectFunctions.GetBaseProjectById));
                 if (authorization.Key != HttpStatusCode.OK)
                 {
                     return CreateErrorResponse(req, authorization.Key, null, authorization.Value);
@@ -138,7 +138,7 @@ namespace BoxApi.Api.Functions
             {
                 _insightsLogger.TrackException(e);
                 telemetryRequest.Success = false;
-                return CreateErrorResponse(req, HttpStatusCode.InternalServerError, e, "BoxApi process failed due to an unexpected error.");
+                return CreateErrorResponse(req, HttpStatusCode.InternalServerError, e, "BaseProject process failed due to an unexpected error.");
             }
             finally
             {
@@ -172,7 +172,7 @@ namespace BoxApi.Api.Functions
                     return HttpResponsesMessageContents.BadRequest;
 
                 case HttpStatusCode.NotFound:
-                    return HttpResponsesMessageContents.BoxApi_NOT_FOUND;
+                    return HttpResponsesMessageContents.BaseProject_NOT_FOUND;
 
                 case HttpStatusCode.InternalServerError:
                     return HttpResponsesMessageContents.InternalServerError;

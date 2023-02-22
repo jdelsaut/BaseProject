@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 
-namespace BoxApi.Infrastructure.Settings
+namespace BaseProject.Infrastructure.Settings
 {
     public class SettingsReader : ISettingsReader
     {

@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace BoxApi.Api.Extensions
+namespace BaseProject.Api.Extensions
 {
     internal class ApiErrorResponseDTO
     {
