@@ -1,0 +1,98 @@
+{
+"case": {
+            "case_id": "string",
+            "service": {
+                "service_code": "PLUMBING",
+                "requested_appointment": {
+                    "appointment_at": "2025-09-09T10:25:43.511+00:00"
+                },
+                "spare_parts": "spare parts"
+            },
+            "incident_location": {
+                "address": {
+                    "street_address": "7 rue de abreuvoir, Batiment A",
+                    "subdivision": "HAUTS-DE-SEINE",
+                    "postal_code": "92400",
+                    "locality": "Courbevoie",
+                    "country": "FR"
+                },
+                "coordinates": {
+                    "latitude": -10.489240076656043,
+                    "longitude": -135.14133549999997
+                },
+                "additional_information": "The customer will be in front of the Mall"
+            }
+        },
+        "intervention_object": {
+            "name": "Boiler, Building roof",
+            "device_information": {
+                "brand": "Bosch",
+                "model": "Bosch TR3500TRO 5 T",
+                "fuel_type": "LIQUID_PETROL_GAS",
+                "age": "P5Y8M4D",
+                "reference_number": "VF1FW57B052967712"
+            },
+            "physical_caracteristic": {
+                "sizes": {
+                    "diameter": 300,
+                    "unit": "[in_i]"
+                },
+                "power": {
+                    "unit": "w",
+                    "value": 5.8
+                },
+                "surface": {
+                    "unit": "m2",
+                    "value": 100
+                },
+                "number_of_storeys": 4
+            }
+        },
+        "customer_application": "HOME_MANAGER",
+        "context": {
+            "problem_context": {
+                "code": "TO_BE_DEFINED",
+                "description": "string"
+            },
+            "sensitivities": "Safety risk to the customer",
+            "vulnerabilities": "Wheelchair user"
+        },
+        "BoxApi_criteria": {
+            "assignable_providers": []
+        },
+        "contacts": [
+          {
+            "type": "CALLER",
+            "title": "MR",
+            "first_name": "string",
+            "last_name": "string",
+            "phone_number": "+33601010101",
+            "preferred_contact_hours": [
+              "T22:00/T22:15"
+            ]
+          }
+        ],
+        "policy": {
+            "holder_policy_number": "string",
+            "partner_name": "string"
+        },
+        "quotation": {
+            "authorized_distance": {
+                "value": 10,
+                "unit": "km"
+            },
+            "pre_authorized_amount_incl_tax": {
+                "value": 200,
+                "currency": "EUR"
+            },
+            "cover_limit_amount_incl_tax": {
+                "value": 200,
+                "currency": "EUR"
+            },
+            "excess_amount_incl_tax": {
+                "value": 200,
+                "currency": "EUR"
+            },
+            "company_to_invoice": "AAF"
+        }
+    }

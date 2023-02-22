@@ -1,0 +1,110 @@
+{
+  "assignment_type": "Domestic",
+  "case": {
+    "case_id": "string",
+    "service": {
+      "service_code": "PLUMBING",
+      "requested_appointment": {
+        "appointment_at": "2025-09-09T10:25:43.51+00:00"
+      },
+      "spare_parts": "spare parts"
+    },
+    "incident_location": {
+      "address": {
+        "street_address": "7 rue de abreuvoir, Batiment A",
+        "subdivision": "HAUTS-DE-SEINE",
+        "postal_code": "92400",
+        "locality": "Courbevoie",
+        "country": "FR"
+      },
+      "coordinates": {
+        "latitude": -10.489240076656043,
+        "longitude": -135.14133549999997
+      }
+    }
+  },
+  "intervention_object": {
+    "name": "Boiler, Building roof",
+    "device_information": {
+      "brand": "Bosch",
+      "model": "Bosch TR3500TRO 5 T",
+      "fuel_type": "LIQUID_PETROL_GAS",
+      "age": "P5Y8M4D",
+      "reference_number": "VF1FW57B052967712"
+    }
+  },
+  "is_a_recall": false,
+  "customer_application": "HOME_MANAGER",
+  "context": {
+    "problem_context": {
+      "code": "TO_BE_DEFINED",
+      "description": "string"
+    },
+    "sensitivities": "Safety risk to the customer",
+    "vulnerabilities": "Wheelchair user"
+  },
+  "id": "0001-0182b1bd-4669-5f3a-897a-9d8a76b3bf8d",
+  "providers_to_assign": [
+    {
+      "provider_id": "Plumber_Roger-e6f8-4d42-adb4-7f02591f53fc"
+    }
+  ],
+  "assignment_mode": "Single",
+  "assignment_status": "Completed",
+  "mission_orders": [
+    {
+      "mission_order_id": "AXP0001-68bd30b1-fbf0-5011-83a3-b7b625091522",
+      "provider": {
+        "provider_id": "Plumber_Roger-e6f8-4d42-adb4-7f02591f53fc",
+        "provider_external_id": "external_id_9",
+        "administrative_information": {
+          "commercial_name": "BoxApiMS: Plumber_Roger",
+          "location": {
+            "latitude": -10.489240076656043,
+            "longitude": -142.14133549999997
+          }
+        }
+      },
+      "mission_order_status": "Accepted",
+      "creation_date": "2020-04-23T08:31:30.9412827+00:00",
+      "last_modification_date": "2020-04-23T08:31:31.5535289+00:00",
+      "sending_date": "2020-04-23T08:31:31.2097167+00:00",
+      "response_date": "2020-04-23T08:31:31.447501+00:00"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "CALLER",
+      "title": "MR",
+      "first_name": "string",
+      "last_name": "string",
+      "phone_number": "+33601010101",
+      "preferred_contact_hours": [
+        "T22:00/T22:15"
+      ]
+    }
+  ],
+  "policy": {
+    "holder_policy_number": "string",
+    "partner_name": "string"
+  },
+  "quotation": {
+    "authorized_distance": {
+      "value": 10,
+      "unit": "km"
+    },
+    "pre_authorized_amount_incl_tax": {
+      "value": 200,
+      "currency": "EUR"
+    },
+    "cover_limit_amount_incl_tax": {
+      "value": 200,
+      "currency": "EUR"
+    },
+    "excess_amount_incl_tax": {
+      "value": 200,
+      "currency": "EUR"
+    },
+    "company_to_invoice": "AAF"
+  }
+}

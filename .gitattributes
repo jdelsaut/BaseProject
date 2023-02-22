@@ -1,0 +1,4 @@
+#Script files EOF normalization
+# Ensure bash files use LF
+
+*.sh     text eol=lf

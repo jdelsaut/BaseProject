@@ -1,0 +1,28 @@
+﻿using BoxApi.Common.Exceptions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
+using System.Linq;
+
+namespace BoxApi.Common.JsonConverters
+{
+    public class NullableEnumIntoStringAndValidatorConverter : StringEnumConverter
+    {
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            var namesInEnum = objectType.GenericTypeArguments[0].GetEnumNames();
+            if(
+                reader.Value != null
+                &&
+                !namesInEnum.Contains(reader.Value.ToString(), StringComparer.InvariantCultureIgnoreCase)
+            )
+            {
+                throw new NotInEnumException($@"'{reader.Value.ToString()}' is not allowed as a value (values allowed: '{
+                    string.Join("', '", namesInEnum)
+                }')");
+            }
+
+            return base.ReadJson(reader, objectType, existingValue, serializer);
+        }
+    }
+}

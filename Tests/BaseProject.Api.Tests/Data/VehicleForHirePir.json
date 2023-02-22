@@ -1,0 +1,89 @@
+{
+  "BoxApi_criteria": {
+    "assignable_providers": [
+      {
+        "provider_id": "22222222-3bb6-4d8d-ad78-bc2431d02019",
+        "provider_external_id": "239455"
+      }
+    ],
+    "search_radius": {
+      "value": 123,
+      "unit": "km"
+    }
+  },
+  "contacts": [
+    {
+      "type": "CALLER",
+      "title": "MR",
+      "first_name": "string",
+      "last_name": "string",
+      "phone_number": "+33601010101",
+      "preferred_contact_hours": [
+        "T22:00/T22:15"
+      ]
+    }
+  ],
+  "policy": {
+    "holder_policy_number": "string",
+    "partner_name": "string"
+  },
+  "case": {
+    "case_id": "string",
+    "requested_appointment": {
+      "appointment_at": "2019-02-23T12:21:26Z",
+      "appointment_period": "2019-09-22T13:00/2019-09-22T15:00"
+    },
+    "service_code": "TAXI",
+    "pickup_location": {
+      "address": {
+        "street_address": "7 rue de abreuvoir, Batiment A",
+        "subdivision": "HAUTS-DE-SEINE",
+        "postal_code": "92400",
+        "locality": "Courbevoie",
+        "country": "FR"
+      },
+      "coordinates": {
+        "longitude": 2.3488,
+        "latitude": 48.85341
+      },
+      "additional_information": "In front of the Mall"
+    },
+    "drop_off_location": {
+      "address": {
+        "street_address": "7 rue de abreuvoir, Batiment A",
+        "subdivision": "HAUTS-DE-SEINE",
+        "postal_code": "92400",
+        "locality": "Courbevoie",
+        "country": "FR"
+      },
+      "coordinates": {
+        "longitude": 2.3488,
+        "latitude": 48.85341
+      },
+      "additional_information": "In front of the Mall"
+    },
+    "context": {
+      "passengers": {
+        "number_total_passengers": 5,
+        "number_of_adults": 2,
+        "number_of_children": 1
+      },
+      "pets": "1 dog and 2 cats",
+      "specific_requests": [
+        "BAGGAGE"
+      ],
+      "is_international_destination": false
+    }
+  },
+  "quotation": {
+    "authorized_distance": {
+      "value": 123,
+      "unit": "km"
+    },
+    "cover_limit_amount_excl_tax": {
+      "value": 199.99,
+      "currency": "EUR"
+    },
+    "company_to_invoice": "AAF"
+  }
+}

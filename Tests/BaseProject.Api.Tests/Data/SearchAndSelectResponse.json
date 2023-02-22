@@ -1,0 +1,26 @@
+{
+      "BoxApi_id": "0001-c95fd047-361e-4cb1-9353-79fa72ca5b24",
+      "search_status": "Completed",
+      "providers": [
+          {
+              "id" : "2b200e48-e6f8-4d42-adb4-7f02591f53fc"
+          }
+      ],
+      "log_descriptions": [
+      {
+          "label": "Selection by services",
+          "status": "Success",
+          "message": "Providers selection by services needeed returned 1 providers"
+      },
+      {
+          "label": "Selection by localization",
+          "status": "Success",
+          "message": "Providers selection by localization returned 1 providers"
+      },
+        {
+          "label": "Selection by availability",
+          "status": "Success",
+          "message": "Providers selection by availability returned 1 providers"
+        }
+      ]
+  }

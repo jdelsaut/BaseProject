@@ -1,0 +1,208 @@
+{
+  "assignment_id": "0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+  "BoxApi_id": "0001-c95fd047-361e-4cb1-9353-79fa72ca5b24",
+  "caller_request_id": "0001-AAAA-BBBB-CCCC",
+  "assignment_status": "Failed",
+  "assignment_mode": "Single",
+  "assignment_type": "Roadside",
+  "providers_to_assign": [
+    {
+      "provider_id": "11856",
+      "has_preaccepted_mission": false
+    }
+  ],
+  "case": {
+    "service": {
+      "service_code": "towing",
+      "qualifiers": [
+        "Car (-3T5) Regular"
+      ],
+      "service_destination": {
+        "address": {
+          "street_address": "7 rue de abreuvoir, Batiment A",
+          "subdivision": "HAUTS-DE-SEINE",
+          "postal_code": "92400",
+          "locality": "Courbevoie",
+          "country": "FR"
+        },
+        "coordinates": {
+          "longitude": 2.3488,
+          "latitude": 48.85341
+        },
+        "additional_information": "The car is in a parking in front of the mall",
+        "name": "string",
+        "category": "Parking"
+      },
+      "spare_parts": "Spare tire",
+      "requested_appointment": {
+        "appointment_at": "2019-02-23T12:21:26Z",
+        "appointment_period": "T22:00/T22:15"
+      }
+    },
+    "incident_location": {
+      "address": {
+        "street_address": " Metro Chatillon Montrouge",
+        "subdivision": "subdivision_1",
+        "postal_code": "92140",
+        "locality": "ile de france",
+        "country": "FR"
+      },
+      "coordinates": {
+        "latitude": 10,
+        "longitude": 10
+      },
+      "additional_information": "additional_information"
+    },
+    "vehicle": {
+      "vehicle_type": "CAR_UTILITY_VEHICLE",
+      "first_registration_date": "2019-04-15T14:15:00",
+      "registration_plate_number": "registration_plate_number_1",
+      "cylinder_capacity": {
+        "value": 50.26,
+        "unit": "cm3"
+      },
+      "fuel_type": "DIESEL",
+      "transmission": "4WD",
+      "color": "bleu",
+      "has_trailer": true,
+      "transported_good_type": "transported_good_type_4",
+      "gross_vehicle_weight": {
+        "value": 50.26,
+        "unit": "t"
+      },
+      "sizes": {
+        "unit": "m",
+        "length": 2.8,
+        "width": 1.8,
+        "height": 2
+      },
+      "proximity_floor": "HIGH",
+      "brand": "Audi",
+      "model": "A5",
+      "age": "P01Y9M4DT11H9M8S",
+      "reference_number": "VF1FW57B052967712",
+      "mileage": {
+        "value": 213000,
+        "unit": "km"
+      },
+      "is_rolling": true
+    },
+    "context": {
+      "problem_context": {
+        "problem_code": "problem_code_123",
+        "problem_label": "problem_label_123",
+        "problem_description": "problem_description_123",
+        "problem_detail": "problem_detail_123456",
+        "special_information": "special_information_123456"
+      },
+      "passengers": {
+        "number_total_passengers": 6,
+        "number_of_adults": 1,
+        "number_of_children": 2,
+        "number_of_infants": 1,
+        "number_of_seniors": 1,
+        "oldest_traveler_age": 81
+      },
+      "number_of_sensitives_vulnerables": 1,
+      "pets": "pets_1",
+      "specific_request": "specific_request_1"
+    }
+  },
+  "policy": {
+    "holder_policy_number": "string",
+    "partner_name": "string"
+  },
+  "contacts": [
+    {
+      "type": "CALLER",
+      "title": "MR",
+      "first_name": "Florian",
+      "last_name": "Maurice",
+      "phone_number": "Mobile_Phone"
+    }
+  ],
+  "quotation": {
+    "authorized_distance": {
+      "value": 50.0,
+      "unit": "km",
+      "is_as_crow_flies": false
+    },
+    "pre_authorized_amount_incl_tax": {
+      "value": 159.95,
+      "currency": "EUR"
+    },
+    "cover_limit_amount_incl_tax": {
+      "value": 499.99,
+      "currency": "EUR"
+    },
+    "excess_amount_incl_tax": {
+      "value": 120.99,
+      "currency": "EUR"
+    },
+    "company_to_invoice": "AAF"
+  },
+  "mission_orders": [
+    {
+      "mission_order_id": "0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "provider": {
+        "id": "11856",
+        "provider_external_id": "ProviderType_not_revelent",
+        "commercial_name": null,
+        "is_auto_assignable": false,
+        "auto_assignable_hours": [],
+        "is_auto_accepting_missions": false
+      },
+      "mission_order_status": "Switch_Manual",
+      "creation_date": "2019-08-27T14:03:12.7435353Z",
+      "last_modification_date": "2019-08-27T14:03:13.0056094Z",
+      "sending_date": null,
+      "response_date": null,
+      "refusal_reason": null,
+      "provider_estimated_time_arrival": null,
+      "provider_start_location": null,
+      "has_preaccepted_mission": false
+    }
+  ],
+  "log_descriptions": [
+    {
+      "label": "Assignment Creation",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:12.449302Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Assignment Update",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:12.5607978Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Mission Order Creation",
+      "status": "Success",
+      "message": "Mission Order 0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "date_time": "2019-08-27T14:03:12.8138762Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Mission Order Switching in Manual",
+      "status": "Success",
+      "message": "Mission Order 0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "date_time": "2019-08-27T14:03:13.0923902Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Assignment Update",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:13.2971746Z",
+      "status_reason": null,
+      "status_description": null
+    }
+  ]
+}

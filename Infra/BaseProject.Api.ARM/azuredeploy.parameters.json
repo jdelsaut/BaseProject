@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ARM_APPINSIGHTS_INSTRUMENTATIONKEY": {
+      "value": ""
+    },
+    "ARM_existingAseLocation": {
+      "value": "West Europe"
+    },
+    "ARM_appServicePlanNumber": {
+      "value": "01"
+    },
+    "ARM_location": {
+      "value": "westeurope"
+    },
+    "ARM_locationName": {
+      "value": "West Europe"
+    },
+    "ARM_pairedLocation": {
+      "value": "northeurope"
+    },
+    "ARM_pairedLocationName": {
+      "value": "North Europe"
+    },
+    "ARM_passPrefix": {
+      "value": "z"
+    },
+    "ARM_axaPrefix": {
+      "value": "aas"
+    },
+    "ARM_projectName": {
+      "value": "cpo"
+    },
+    "ARM_appName": {
+      "value": "your_name_to_change"
+    },
+    "ARM_envName": {
+      "value": "dva"
+    },
+    "ARM_version": {
+      "value": "01"
+    },
+    "ARM_cosmosDbNumber": {
+      "value": "01"
+    },
+    "ARM_enableMultipleWriteLocations": {
+      "value": false
+    },
+    "ARM_enableAutomaticFailover": {
+      "value": false
+    },
+    "ARM_hostingEnvironment": {
+      "value": ""
+    },
+    "ARM_sku": {
+      "value": "Isolated"
+    },
+    "ARM_skuCode": {
+      "value": "I1"
+    },
+    "ARM_workerSize": {
+      "value": "0"
+    },
+    "ARM_workerSizeId": {
+      "value": "0"
+    },
+    "ARM_numberOfWorkers": {
+      "value": "1"
+    },
+    "ARM_cosmosDBAllowedIPs": {
+      "value": ""
+    },
+    "ARM_documentationStoNumber": {
+      "value": "00"
+    }
+  }
+}

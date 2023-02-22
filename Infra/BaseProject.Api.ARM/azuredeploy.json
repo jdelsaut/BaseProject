@@ -1,0 +1,354 @@
+{
+  "resources": [
+    {
+      "apiVersion": "2018-02-01",
+      "name": "[variables('hostingPlanName')]",
+      "type": "Microsoft.Web/serverfarms",
+      "location": "[parameters('ARM_existingAseLocation')]",
+      "properties": {
+        "name": "[variables('hostingPlanName')]",
+        "workerSize": "[parameters('ARM_workerSize')]",
+        "workerSizeId": "[parameters('ARM_workerSizeId')]",
+        "numberOfWorkers": "[parameters('ARM_numberOfWorkers')]",
+        "hostingEnvironment": "[parameters('ARM_hostingEnvironment')]",
+        "publicIPAllocationMethod": "Static"
+      },
+      "sku": {
+        "Tier": "[parameters('ARM_sku')]",
+        "Name": "[parameters('ARM_skuCode')]"
+      }
+    },
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[variables('azFunctionName')]",
+      "type": "Microsoft.Web/sites",
+      "properties": {
+        "name": "[variables('azFunctionName')]",
+        "siteConfig": {
+          "alwaysOn": true,
+          "appSettings": [
+            {
+              "name": "FUNCTIONS_WORKER_RUNTIME",
+              "value": "dotnet"
+            },
+            {
+              "name": "AzureWebJobsStorage",
+              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('blobStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('blobStorageName')), '2015-05-01-preview').key1)]"
+            },
+            {
+              "name": "FUNCTIONS_EXTENSION_VERSION",
+              "value": "~4"
+            },
+            {
+              "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('blobStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('blobStorageName')), '2015-05-01-preview').key1)]"
+            },
+            {
+              "name": "WEBSITE_CONTENTSHARE",
+              "value": "[concat(toLower(variables('azFunctionName')), '9aa2')]"
+            },
+            {
+              "name": "WEBSITE_NODE_DEFAULT_VERSION",
+              "value": "10.14.1"
+            },
+            {
+              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+              "value": "[parameters('ARM_APPINSIGHTS_INSTRUMENTATIONKEY')]"
+            }
+          ]
+        },
+        "clientAffinityEnabled": false,
+        "reserved": false,
+        "serverFarmId": "[concat('/subscriptions/', Subscription().subscriptionId, '/resourcegroups/', resourceGroup().name, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]",
+        "hostingEnvironment": "[parameters('ARM_hostingEnvironment')]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('blobStorageName'))]",
+        "[concat('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
+      ],
+      "location": "[parameters('ARM_locationName')]",
+      "kind": "functionapp",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "tags": {
+        "Microservice": "BoxApi",
+        "Environment": "[parameters('ARM_envName')]",
+        "Version": "[parameters('ARM_version')]"
+      }
+    },
+    {
+      "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('blobStorageName')]",
+      "location": "[parameters('ARM_location')]",
+      "properties": {
+        "accountType": "Standard_LRS"
+      },
+      "tags": {
+        "Microservice": "BoxApi",
+        "Environment": "[parameters('ARM_envName')]",
+        "Version": "[parameters('ARM_version')]"
+      }
+    },
+    {
+      "apiVersion": "2015-04-08",
+      "kind": "GlobalDocumentDB",
+      "type": "Microsoft.DocumentDb/databaseAccounts",
+      "name": "[variables('cosmosDbName')]",
+      "location": "[parameters('ARM_location')]",
+      "properties": {
+        "databaseAccountOfferType": "Standard",
+        "consistencyPolicy": {
+          "defaultConsistencyLevel": "Strong",
+          "maxIntervalInSeconds": 5,
+          "maxStalenessPrefix": 100
+        },
+        "locations": [
+          {
+            "id": "[concat(variables('cosmosDbName'), '-', parameters('ARM_location'))]",
+            "failoverPriority": 0,
+            "locationName": "[parameters('ARM_location')]"
+          },
+          {
+            "id": "[concat(variables('cosmosDbName'), '-', parameters('ARM_pairedLocation'))]",
+            "failoverPriority": 1,
+            "locationName": "[parameters('ARM_pairedLocation')]"
+          }
+        ],
+        "enableMultipleWriteLocations": "[parameters('ARM_enableMultipleWriteLocations')]",
+        "enableAutomaticFailover": "[parameters('ARM_enableAutomaticFailover')]",
+        "isVirtualNetworkFilterEnabled": false,
+        "virtualNetworkRules": [],
+        "ipRangeFilter": "[parameters('ARM_cosmosDBAllowedIPs')]",
+        "dependsOn": []
+      },
+      "tags": {
+        "defaultExperience": "Core (SQL)",
+        "Microservice": "BoxApi",
+        "Environment": "[parameters('ARM_envName')]",
+        "Version": "[parameters('ARM_version')]"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "name": "[variables('docStorageAccountName')]",
+      "location": "westeurope",
+      "tags": {
+        "global-app": "CPO-SAS",
+        "global-dcs": "INFRA",
+        "global-env": "DV",
+        "global-opco": "AAS",
+        "global-project": "APSA01@0010"
+      },
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [],
+          "ipRules": [
+            {
+              "value": "171.18.34.0/23",
+              "action": "Allow"
+            },
+            {
+              "value": "171.18.2.174",
+              "action": "Allow"
+            },
+            {
+              "value": "171.18.2.175",
+              "action": "Allow"
+            },
+            {
+              "value": "92.103.42.210",
+              "action": "Allow"
+            }
+          ],
+          "defaultAction": "Deny"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+          "services": {
+            "file": {
+              "enabled": true
+            },
+            "blob": {
+              "enabled": true
+            }
+          },
+          "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices",
+      "apiVersion": "2019-06-01",
+      "name": "[concat(variables('docStorageAccountName'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('docStorageAccountName'))]"
+      ],
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/fileServices",
+      "apiVersion": "2019-06-01",
+      "name": "[concat(variables('docStorageAccountName'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('docStorageAccountName'))]"
+      ],
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "properties": {
+        "cors": {
+          "corsRules": []
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2019-06-01",
+      "name": "[concat(variables('docStorageAccountName'), '/default/$web')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('docStorageAccountName'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts',variables('docStorageAccountName'))]"
+      ],
+      "properties": {
+        "publicAccess": "None"
+      }
+    }
+  ],
+  "parameters": {
+    "ARM_appServicePlanNumber": {
+      "type": "string"
+    },
+    "ARM_location": {
+      "type": "string"
+    },
+    "ARM_locationName": {
+      "type": "string"
+    },
+    "ARM_pairedLocation": {
+      "type": "string"
+    },
+    "ARM_pairedLocationName": {
+      "type": "string"
+    },
+    "ARM_passPrefix": {
+      "type": "string"
+    },
+    "ARM_axaPrefix": {
+      "type": "string"
+    },
+    "ARM_projectName": {
+      "type": "string"
+    },
+    "ARM_appName": {
+      "type": "string"
+    },
+    "ARM_envName": {
+      "type": "string"
+    },
+    "ARM_version": {
+      "type": "string"
+    },
+    "ARM_cosmosDbNumber": {
+      "type": "string"
+    },
+    "ARM_APPINSIGHTS_INSTRUMENTATIONKEY": {
+      "type": "securestring"
+    },
+    "ARM_enableMultipleWriteLocations": {
+      "type": "bool",
+      "defaultValue": false,
+      "allowedValues": [
+        true,
+        false
+      ]
+    },
+    "ARM_enableAutomaticFailover": {
+      "type": "bool",
+      "defaultValue": false,
+      "allowedValues": [
+        true,
+        false
+      ]
+    },
+    "ARM_existingAseLocation": {
+      "type": "string"
+    },
+    "ARM_hostingEnvironment": {
+      "type": "string"
+    },
+    "ARM_numberOfWorkers": {
+      "type": "string"
+    },
+    "ARM_sku": {
+      "type": "string"
+    },
+    "ARM_skuCode": {
+      "type": "string"
+    },
+    "ARM_workerSize": {
+      "type": "string"
+    },
+    "ARM_workerSizeId": {
+      "type": "string"
+    },
+    "ARM_cosmosDBAllowedIPs": {
+      "type": "string"
+    },
+    "ARM_documentationStoNumber": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "azFunctionName": "[concat(parameters('ARM_passPrefix'), '-', parameters('ARM_axaPrefix'), '-', parameters('ARM_projectName'), '-', parameters('ARM_appName'), '-', parameters('ARM_envName'), '-ew1-fcn', parameters('ARM_version') )]",
+    "cosmosDbName": "[concat(parameters('ARM_passPrefix'), '-', parameters('ARM_axaPrefix'), '-', parameters('ARM_projectName'), '-', parameters('ARM_appName'), '-', parameters('ARM_envName'), '-ew1-cdb', parameters('ARM_cosmosDbNumber') )]",
+    "blobStorageName": "[concat(parameters('ARM_passPrefix'), parameters('ARM_axaPrefix'), parameters('ARM_projectName'), parameters('ARM_appName'), parameters('ARM_envName'), 'ew1sto', parameters('ARM_version') )]",
+    "hostingPlanName": "[concat(parameters('ARM_passPrefix'), '-', parameters('ARM_axaPrefix'), '-', parameters('ARM_projectName'), '-', parameters('ARM_appName'), '-', parameters('ARM_envName'), '-ew1-asp', parameters('ARM_appServicePlanNumber') )]",
+    "resourceGroupName": "[resourceGroup().name]",
+    "docStorageAccountName": "[concat(parameters('ARM_passPrefix'), parameters('ARM_axaPrefix'), parameters('ARM_projectName'), parameters('ARM_appName'), parameters('ARM_envName'), 'ew1sto', parameters('ARM_documentationStoNumber') )]"
+  },
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "outputs": {
+    "azFunctionName": {
+      "value": "[variables('azFunctionName')]",
+      "type": "string"
+    },
+    "cosmosDbName": {
+      "value": "[variables('cosmosDbName')]",
+      "type": "string"
+    },
+    "blobStorageName": {
+      "value": "[variables('blobStorageName')]",
+      "type": "string"
+    },
+    "resourceGroupName": {
+      "value": "[variables('resourceGroupName')]",
+      "type": "string"
+    },
+    "docStorageAccountName": {
+      "value": "[variables('resourceGroupName')]",
+      "type": "string"
+    }
+  }
+}
+

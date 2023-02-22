@@ -1,0 +1,78 @@
+{
+  "assignment_id": "0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+  "BoxApi_id": "0001-c95fd047-361e-4cb1-9353-79fa72ca5b24",
+  "caller_request_id": "0001-AAAA-BBBB-CCCC",
+  "assignment_status": "Completed",
+  "assignment_mode": "Single",
+  "providers_to_assign": [
+    {
+      "provider_id": "11856",
+      "has_preaccepted_mission": false
+    }
+  ],
+  "mission_orders": [
+    {
+      "mission_order_id": "0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "provider": {
+        "id": "11856",
+        "provider_external_id": "ProviderType_not_revelent",
+        "commercial_name": null,
+        "is_auto_assignable": false,
+        "auto_assignable_hours": [],
+        "is_auto_accepting_missions": false
+      },
+      "mission_order_status": "Switch_Manual",
+      "creation_date": "2019-08-27T14:03:12.7435353Z",
+      "last_modification_date": "2019-08-27T14:03:13.0056094Z",
+      "sending_date": null,
+      "response_date": null,
+      "refusal_reason": null,
+      "provider_estimated_time_arrival": null,
+      "provider_start_location": null,
+      "has_preaccepted_mission": false
+    }
+  ],
+  "log_descriptions": [
+    {
+      "label": "Assignment Creation",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:12.449302Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Assignment Update",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:12.5607978Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Mission Order Creation",
+      "status": "Success",
+      "message": "Mission Order 0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "date_time": "2019-08-27T14:03:12.8138762Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Mission Order Switching in Manual",
+      "status": "Success",
+      "message": "Mission Order 0001-3b262a06-531f-5e99-9d97-555ef1982ac7",
+      "date_time": "2019-08-27T14:03:13.0923902Z",
+      "status_reason": null,
+      "status_description": null
+    },
+    {
+      "label": "Assignment Update",
+      "status": "Success",
+      "message": "Assignment 0001-85a69292-7a8d-5e49-82b9-01a101e70b27",
+      "date_time": "2019-08-27T14:03:13.2971746Z",
+      "status_reason": null,
+      "status_description": null
+    }
+  ]
+
+}

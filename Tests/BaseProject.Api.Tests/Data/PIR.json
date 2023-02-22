@@ -1,0 +1,144 @@
+{
+  "case_id": "9de93dcf-abf2-4f93-8cdc-fc9090f9a85c",
+  "case_request_id": "e872c9a3-694b-4cc3-8059-dc5aef1e9f6f",
+  "assignment_type": "Roadside",
+  "BoxApi_criteria": {
+    "assignable_providers": [
+    ]
+  },
+  "contacts": [
+    {
+      "type": "CALLER",
+      "title": "MR",
+      "last_name": "Cuco",
+      "first_name": "Leonardo",
+      "phone_number": "0612121212",
+      "preferred_contact_hours": [
+        "T08:00/T12:00",
+        "T13:30/T19:45"
+      ]
+    }
+  ],
+  "policy": {
+    "holder_policy_number": "policyNumber",
+    "partner_name": "PartnerName"
+  },
+  "case": {
+    "case_id": "string",
+    "service": {
+      "service_code": "towing",
+      "qualifiers": [
+        "Car (-3T5) Regular"
+      ],
+      "service_destination": {
+        "address": {
+          "street_address": "7 rue de abreuvoir, Batiment A",
+          "subdivision": "HAUTS-DE-SEINE",
+          "postal_code": "92400",
+          "locality": "Courbevoie",
+          "country": "FR"
+        },
+        "coordinates": {
+          "longitude": 2.3488,
+          "latitude": 48.85341
+        },
+        "additional_information": "The car is in a parking in front of the mall",
+        "name": "string",
+        "category": "Parking"
+      },
+      "spare_parts": "Spare tire",
+      "requested_appointment": {
+        "appointment_at": "2019-02-23T12:21:26Z",
+        "appointment_period": "T22:00/T22:15"
+      }
+    },
+    "incident_location": {
+      "address": {
+        "street_address": " Metro Chatillon Montrouge",
+        "subdivision": "subdivision_1",
+        "postal_code": "92140",
+        "locality": "ile de france",
+        "country": "FR"
+      },
+      "coordinates": {
+        "longitude": 2.36,
+        "latitude": 48.9244
+      },
+      "description": "description"
+    },
+    "vehicle": {
+      "brand": "Audi",
+      "model": "A5",
+      "age": "P01Y9M4DT11H9M8S",
+      "reference_number": "VF1FW57B052967712",
+      "vehicle_type": "CAR_UTILITY_VEHICLE",
+      "first_registration_date": "2019-04-15T14:15:00",
+      "registration_plate_number": "registration_plate_number_1",
+      "cylinder_capacity": {
+
+        "value": 50.26,
+        "unit": "cm3"
+      },
+      "fuel_type": "DIESEL",
+      "transmission": "4WD",
+      "color": "bleu",
+      "has_trailer": true,
+      "transported_good_type": "transported_good_type_4",
+      "gross_vehicle_weight": {
+        "value": 50.26,
+        "unit": "t"
+      },
+      "sizes": {
+        "unit": "m",
+        "length": 2.8,
+        "width": 1.8,
+        "height": 2
+      },
+      "proximity_floor": "HIGH",
+      "mileage": {
+        "value": 213000,
+        "unit": "km"
+      },
+      "is_rolling": true
+    },
+    "context": {
+      "problem_context": {
+        "problem_code": "problem_code_123",
+        "problem_label": "problem_label_123",
+        "problem_description": "problem_description_123",
+        "problem_detail": "problem_detail_123456",
+        "special_information": "special_information_123456"
+      },
+      "passengers": {
+        "number_total_passengers": 6,
+        "number_of_adults": 1,
+        "number_of_children": 2,
+        "number_of_infants": 1,
+        "number_of_seniors": 1,
+        "oldest_traveler_age": 81
+      },
+      "number_of_sensitives_vulnerables": 1,
+      "pets": "pets_1",
+      "specific_request": "specific_request_1"
+    }
+  },
+  "quotation": {
+    "authorized_distance": {
+      "value": 50.26,
+      "unit": "km"
+    },
+    "pre_authorized_amount_incl_tax": {
+      "value": 159.95,
+      "currency": "EUR"
+    },
+    "cover_limit_amount_incl_tax": {
+      "value": 499.99,
+      "currency": "EUR"
+    },
+    "excess_amount_incl_tax": {
+      "value": 120.99,
+      "currency": "EUR"
+    },
+    "company_to_invoice": "AAF"
+  }
+}

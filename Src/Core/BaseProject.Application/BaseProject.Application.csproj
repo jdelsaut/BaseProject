@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\BoxApi.Infrastructure\BoxApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BoxApi.Persistance\BoxApi.Persistance.csproj" />
+    <ProjectReference Include="..\BoxApi.Domain\BoxApi.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BoxApi\Commands\" />
+    <Folder Include="BoxApi\Queries\" />
+    <Folder Include="Validators\CommonValidators\" />
+  </ItemGroup>
+
+</Project>

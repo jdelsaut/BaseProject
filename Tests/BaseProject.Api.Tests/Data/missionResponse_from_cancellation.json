@@ -1,0 +1,222 @@
+{
+  "mission_id": "0001-9324c44c-e87f-4a07-b058-314ed1e9d11b",
+  "BoxApi_id": "0001-061a49a1-8509-46b2-aaf2-01ef33a93553",
+  "case_id": "9de93dcf-abf2-4f93-8cdc-fc9090f9a85c",
+  "mission_status": [
+    {
+      "status": "ONGOING",
+      "updated_at": "2019-12-03T16:08:17.6401754+00:00"
+    },
+    {
+      "status": "CANCELLED",
+      "updated_at": "2019-12-03T16:08:56.2853212+00:00"
+    }
+  ],
+  "provider": {
+    "provider_id": "Big Paul Towing",
+    "provider_external_id": "Big Paul Towing",
+    "commercial_name": "commercial_name"
+  },
+  "services": [
+    {
+      "service_code": "Towing",
+      "equipments": [],
+      "spare_parts": "échapement"
+    }
+  ],
+  "provider_start_location": {
+    "latitude": -1.7976931348623157E+308,
+    "longitude": -1.7976931348623157E+308
+  },
+  "provider_estimated_time_arrival": "0001-01-01T00:00:00",
+  "cancellation": null,
+  "mission_communications": [
+    {
+      "communication_code": "ADDITIONAL_INFORMATION",
+      "description": "there are traffic jamys on the highway",
+      "service_destination": {
+        "street_address": "7 rue de l'abreuvoir, Batiment C",
+        "subdivision": "HAUTS-DE-SEINE",
+        "postal_code": "92400",
+        "locality": "Courbevoie",
+        "country": "FR"
+      },
+      "arrival_information": {
+        "current_location": {
+          "latitude": 48.85341,
+          "longitude": 2.3488
+        },
+        "estimated_time_arrival": "2019-02-23T13:00:00Z",
+        "actual_time_arrival": "2019-02-23T12:58:15Z",
+        "delay_of_arrival_time": "PT30M"
+      },
+      "work_information": {
+        "work_started_at": null,
+        "estimated_time_of_completion": "2019-02-23T14:00:00Z",
+        "work_completed_at": "2019-02-23T14:13:54Z"
+      }
+    }
+  ],
+  "change_requests": [
+    {
+      "change_request_status": "PENDING",
+      "service": {
+        "service_code": "TOWING",
+        "equipments": [
+          "Skates",
+          "Release strap",
+          "Lifting kit"
+        ]
+      },
+      "destination_address": {
+        "street_address": "7 rue de l'abreuvoir, Batiment C",
+        "subdivision": "HAUTS-DE-SEINE",
+        "postal_code": "92400",
+        "locality": "Courbevoie",
+        "country": "FR"
+      },
+      "appointment_rescheduled_at": "2019-03-01T08:30:00Z",
+      "total_cost_incl_tax": {
+        "value": 200.0,
+        "currency": "EUR"
+      },
+      "total_cost_excl_tax": {
+        "value": 200.0,
+        "currency": "EUR"
+      },
+      "total_distance": {
+        "value": 155.0,
+        "unit": "km",
+        "is_a_crow_flies": false
+      },
+      "spare_parts": [
+        {
+          "type": "Tire",
+          "quantity": 2,
+          "unit_price_excl_tax": {
+            "value": 200.0,
+            "currency": "EUR"
+          },
+          "unit_price_incl_tax": {
+            "value": 200.0,
+            "currency": "EUR"
+          }
+        }
+      ],
+      "total_labour_hours": "PT2H30M"
+    }
+  ],
+  "mission_report": {
+    "mission_statement": {
+      "is_cancelled": false,
+      "actual_time_arrival": "2019-02-23T12:58:15Z",
+      "work_started_at": "2019-02-23T13:02:19Z",
+      "work_completed_at": "2019-02-23T14:13:54Z",
+      "disclaimer_sheet_signed": true,
+      "total_distance": {
+        "value": 155.0,
+        "unit": "km",
+        "is_a_crow_flies": false
+      },
+      "total_labour_hours": "PT2H30M",
+      "spare_parts": [
+        {
+          "type": "tire",
+          "quantity": 2,
+          "unit_price_excl_tax": {
+            "value": 200.0,
+            "currency": "EUR"
+          },
+          "unit_price_incl_tax": {
+            "value": 200.0,
+            "currency": "EUR"
+          }
+        }
+      ],
+
+      "new_authorized_amount_incl_tax": null,
+      "technician_name": "GIRAUD Alexandre",
+      "additional_information": "First destination closed. Changed for another garage 10km away."
+    },
+    "case": {
+      "service": {
+        "service_code": "TOWING",
+        "equipments": [
+          "Skates",
+          "Release strap",
+          "Lifting kit"
+        ]
+      },
+      "incident_location": {
+        "address": {
+          "street_address": "7 rue de l'abreuvoir, Batiment C",
+          "subdivision": "HAUTS-DE-SEINE",
+          "postal_code": "92400",
+          "locality": "Courbevoie",
+          "country": "FR"
+        },
+        "coordinates": {
+          "latitude": 48.85341,
+          "longitude": 2.3488
+        }
+      },
+      "service_destination": {
+        "name": "Garage du Morvan",
+        "category": "Garage",
+        "address": {
+          "street_address": "7 rue de l'abreuvoir, Batiment C",
+          "subdivision": "HAUTS-DE-SEINE",
+          "postal_code": "92400",
+          "locality": "Courbevoie",
+          "country": "FR"
+        }
+      },
+      "problem_context": {
+        "problem_code": "ENGINE_BREAK",
+        "problem_label": "engine failure",
+        "problem_description": "The vehicle seems not have a engine failure. The engine stopped",
+        "problem_detail": "Lot of smoke, starting few minutes before the car stopped"
+      },
+      "vehicle": {
+        "vehicle_type": "CAR_UTILITY_VEHICLE",
+        "first_registration_date": "2019-02-23T00:00:00Z",
+        "registration_plate_number": "ZZ-999-ZZ",
+        "cylinder_capacity": {
+          "value": 0.125,
+          "unit": "m3"
+        },
+        "gear_box": "AUTO",
+        "fuel_type": "DIESEL",
+        "transmission": "4WD",
+        "color": "blue",
+        "has_trailer": false,
+        "transported_good_type": "Jewelry",
+        "gross_vehicle_weight": {
+          "value": 3.0,
+          "unit": "t"
+        },
+        "sizes": {
+          "unit": "m",
+          "length": 2.8,
+          "width": 1.8,
+          "height": 2.0
+        },
+        "mileage": {
+          "value": 213000.0,
+          "unit": "km"
+        },
+        "brand": "Audi",
+        "model": "A5",
+        "age": "P01Y9M4DT11H9M8S",
+        "reference_number": "VF1FW57B052967712"
+      },
+      "appointment_at": "2019-02-23T12:21:26Z"
+    },
+    "person_on_site": {
+      "title": "MR",
+      "first_name": "Eric",
+      "last_name": "Dubois",
+      "phone_number": "+33601010101"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+resources:
+- repo: self
+  fetchDepth: 15
+
+
+#Your build pipeline references an undefined variable named ‘Parameters.RestoreBuildProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘Parameters.RestoreBuildProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references an undefined variable named ‘Parameters.TestProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references an undefined variable named ‘Parameters.RestoreBuildProjects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+trigger:
+- master
+
+variables:
+  Parameters.RestoreBuildProjects: '**/*.csproj'
+  Parameters.TestProjects: '**/*[Tt]ests/*.csproj'
+  DotnetCoreSdkVersion: '7.0.102'
+
+steps:
+
+- task: PowerShell@2
+  displayName: Launch Cosmos Emulator
+  inputs:  
+    targetType: filePath
+    filePath: Infra/Tools/Run.launch.cosmos.emulator.ps1
+
+- task: FileTransform@1
+  displayName: 'File Transform: CosmosDB TestSettings'
+  inputs:
+    folderPath: Tests/BoxApi.Persistance.Tests
+    fileType: json
+    targetFiles: local.settings.json
+
+- task: DotNetCoreInstaller@0
+  displayName: 'Use .NET Core SDK $(DotnetCoreSdkVersion)'
+  inputs:
+    version: $(DotnetCoreSdkVersion)
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: '$(Parameters.RestoreBuildProjects)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '$(Parameters.RestoreBuildProjects)'
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '$(Parameters.TestProjects)'
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Publish
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '$(Parameters.RestoreBuildProjects)'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    zipAfterPublish: True
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: ARM Template'
+  inputs:
+    PathtoPublish: 'Infra/BoxApi.Api.ARM'
+    ArtifactName: 'drop_API_ARM'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Tools'
+  inputs:
+    PathtoPublish: 'Infra/Tools'
+    ArtifactName: 'drop_Tools'
+
+- task: Pickles@1
+  inputs:
+    featureDir: 'Tests\BoxApi.Acceptance\Features'
+    docFormat: 'DHtml'
+    out: '$(build.artifactstagingdirectory)/Documentation'
+    sutv: 'BoxApi'
+    enableComments: true
+    experimentalFeatures: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Documentation Pickles'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)/Documentation'
+    ArtifactName: 'drop_Documentation'
